@@ -1,0 +1,131 @@
+/* Benefits */
+.benefit-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 80px;
+}
+
+.benefit {
+    border: 1px solid #ccc;
+    padding: 16px 16px 32px 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.benefit .icon {
+    color:  rgba(249, 92, 8, 0.7);
+    font-size: 64px;
+}
+
+.benefit h4 {
+    margin-bottom: 5px;
+}
+
+.benefit .text {
+    font-size: 24px;
+    color: #777;
+}
+
+/* New Arrivals */
+.h {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-weight: 600;
+}
+
+section .h h1 {
+    font-weight: 400;
+}
+
+section .h span {
+    color:  rgba(249, 92, 8, 1);
+}
+
+.ac-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.ac {
+    text-align: center;
+    padding-bottom: 16px;
+    transition: all 500ms ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ac:hover {
+    box-shadow: 0 5px 10px rgba(249, 92, 8, 0.7);
+}
+
+.ac .img-cover {
+    overflow: hidden;
+}
+
+.ac img {
+    transition: all 500ms ease-in-out;
+}
+
+.ac:hover img {
+    transform: scale(1.2);
+}
+
+.ab {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 4vw);
+    gap: 2rem;}
+
+.ab .item {
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ab img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms ease-out;
+}
+
+.ab .item-1 img {
+    object-fit: fill;
+}
+
+.ab .item:hover{
+    box-shadow: 0 5px 10px rgba(249, 92, 8, 0.7);
+}
+
+.ab img:hover {
+    transform: scale(1.2);
+}
+
+.item-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+
+.item-2 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+.item-3 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.item-4 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 9;
+}

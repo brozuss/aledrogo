@@ -1,0 +1,55 @@
+.form_addauction{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-left: 120px;
+}
+
+form label{
+    border: 1px solid black;
+    padding: 4px 8px;
+    width: 30%;
+    font-size: 0.7em;
+    font-weight: 400;    
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.inputarea{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputarea input[type=text], .inputarea select, .inputarea input[type=number], textarea{
+    font-family: inherit;
+    border: 1px black solid;
+    width: 340px;
+    height: 40px;
+    padding: 0px 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.inputarea #description{
+    width: 400px;
+    height: 200px;
+}
+
+.additem{
+    width: 340px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+
+.inputarea input:focus{
+    outline-style: 2px solid;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.additem:hover{
+    background-color: rgba(249, 92, 8, 1);
+    color: white;
+    border: 1px white solid;
+}

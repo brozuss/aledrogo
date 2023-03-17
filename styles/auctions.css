@@ -1,0 +1,43 @@
+.twojeogloszenia{
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+}
+
+.dodajogloszenie{
+    text-decoration: none;
+    color: white;
+    background-color: whitesmoke;
+    border: 5px solid rgba(249, 92, 8, 1);
+    background-color: rgba(249, 92, 8, 1);
+    border-radius: 5px;
+    align-self: flex-end;
+}
+
+.dodajogloszenie:hover{
+    color: rgba(249, 92, 8, 1);
+    border: 5px solid rgba(249, 92, 8, 1);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.ogloszenia span{
+    color: rgba(249, 92, 8, 1);
+    
+}
+
+.container-all-auctions{
+    width: 85%; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+}
+
+.container-auction{
+    width: 100%; 
+    height: 200px;
+    background-color: white;
+}
