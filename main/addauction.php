@@ -28,7 +28,6 @@ include('static/navbar.php');
                         <option value=3>Motoryzacja</option>
                     </select>
             </div>
-            <!-- dodawanie zdjjecia -->
             <!-- Cena -->
             <div class="inputarea">    
                 <label for="price">Cena:</label>
@@ -39,7 +38,10 @@ include('static/navbar.php');
                 <label for="description">Opis:</label>
                     <input type="text" name="opis" id="description">  
             </div>
-
+            <!-- dodawanie zdjjecia -->
+            <div class="inputarea">    
+                    <input type="file" name="file" id="file">  
+            </div>
             <input type="submit" class="additem" value="DODAJ">
             <!-- PHP CONFIG -->
             <?php
