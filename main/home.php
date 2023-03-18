@@ -3,90 +3,38 @@
 include('static/head.php');
 include('static/navbar.php');
 ?>
-<!-- main home -->
-
-<!-- New Arrivals -->
-<!-- <section class="section">
-    <div class="h">
-      <h1><span>Ostatnio</span> dodane</h1>
-    </div>
-    <div class="ac-center box">
-        <div class="ac">
-          <div class="img-cover">
-            <img src="hand3.jpg" alt="" />
-          </div>
-          <p></p>
-          <div class="rating">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bx-star"></i>
-          </div>
-          <div class="price"></div>
-        </div>
-
-        <div class="ac">
-            <div class="img-cover">
-              <img src="hand3.jpg" alt="" />
-            </div>
-            <p></p>
-            <div class="rating">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-            <div class="price"></div>
-          </div>
-
-          <div class="ac">
-            <div class="img-cover">
-              <img src="hand3.jpg" alt="" />
-            </div>
-            <p></p>
-            <div class="rating">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-            <div class="price"></div>
-          </div>
-    </div>
-</section> -->
-
-  <!-- Categories -->
-<!-- <section class="section">
-    <div class="h">
-      <h1><span>Szukaj</span> po kategorii</h1>
-    </div>
-    <div class="ab box">
-      <div class="item item-1">
-        <img src="" alt="" />
-      </div>
-      <div class="item item-2">
-        <img src="" alt="" />
-      </div>
-      <div class="item item-3">
-        <img src="" alt="" />
-      </div>
-      <div class="item item-4">
-        <img src="" alt="" />
-      </div>
-    </div>
-</section> -->
-
-  <!-- Section gap -->
-<!-- <section class="section">
-</section> -->
-
+<!-- filter nav -->
+<nav>
+  <form action="home.php">
+    labe
+  </form>
+</nav>
 
   <!-- Products -->
-<section>
-  
+<section class="container-all-products">
+      <?php
+        include('../phpconfig/connect.php');
+        $sel=mysqli_query($connect, "SELECT * FROM `przedmioty`");
+        while($row = mysqli_fetch_array($sel)){
+          $nazwa=$row['nazwa'];
+          $opis=$row['opis'];
+          $img_name=$row['img_name'];
+          $cena=$row['cena_wywolawcza'];
+          echo("
+          <a href='' class='link'><div class='container-product'>
+            <img src='zdjecia/$img_name'>
+            <div class='title_description'>
+              <div class='title'> <h3>$nazwa</h3> </div>
+              <div class='description'> <p>$opis</p> </div>
+            </div>
+            <div class='price'>
+                <p>$cena zł</p>
+            </div>
+          </div></a>
+
+          ");
+        }
+      ?>
 </section>
 
   <!-- Benefits -->
