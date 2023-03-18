@@ -6,7 +6,7 @@ include('static/navbar.php');
 <!-- main home -->
 
 <!-- New Arrivals -->
-<section class="section">
+<!-- <section class="section">
     <div class="h">
       <h1><span>Ostatnio</span> dodane</h1>
     </div>
@@ -56,10 +56,10 @@ include('static/navbar.php');
             <div class="price"></div>
           </div>
     </div>
-</section>
+</section> -->
 
   <!-- Categories -->
-<section class="section">
+<!-- <section class="section">
     <div class="h">
       <h1><span>Szukaj</span> po kategorii</h1>
     </div>
@@ -77,134 +77,16 @@ include('static/navbar.php');
         <img src="" alt="" />
       </div>
     </div>
-</section>
+</section> -->
 
   <!-- Section gap -->
-<section class="section">
-</section>
+<!-- <section class="section">
+</section> -->
 
 
-  <!-- Popular Products -->
-<section class="section">
-    <div class="h">
-      <h1><span>Popularne </span>Produkty</h1>
-    </div>
-    <div class="ac-center box">
-      <div class="ac">
-        <div class="img-cover">
-          <img src="hand3.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-
-      <div class="ac">
-        <div class="img-cover">
-          <img src="slip3.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-
-      <div class="ac">
-        <div class="img-cover">
-          <img src="wallet2.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-      <div class="ac">
-        <div class="img-cover">
-          <img src="hand4.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-      <div class="ac">
-        <div class="img-cover">
-          <img src="slip4.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-      <div class="ac">
-        <div class="img-cover">
-          <img src="wallet3.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-      <div class="ac">
-        <div class="img-cover">
-          <img src="hand1.png" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-      <div class="ac">
-        <div class="img-cover">
-          <img src="wallet4.jpg" alt="" />
-        </div>
-        <p></p>
-        <div class="rating">
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bxs-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
-        <div class="price"></div>
-      </div>
-    </div>
+  <!-- Products -->
+<section>
+  
 </section>
 
   <!-- Benefits -->
