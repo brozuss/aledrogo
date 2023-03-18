@@ -19,12 +19,13 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
         $zdjecie_rozszerzenie = pathinfo($zdjecie, PATHINFO_EXTENSION);
         $dozwolone_rozszerzenia = array("jpg","png","gif","jpeg");
         if (in_array($zdjecie_rozszerzenie, $dozwolone_rozszerzenia)) {
-            $sciezka = 'zdjecia/'.$zdjecie;
+            $unique_imgname=uniqid(rand(), true) .$zdjecie;
+            $sciezka = 'zdjecia/'. $unique_imgname;
             move_uploaded_file($temp_name, $sciezka);
                 
             // dodawanie przedmiotu
             $add_bid=$connect->prepare("INSERT INTO `przedmioty` VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?);");
-            $add_bid->bind_param("isssissi",$sprzedajacy_id, $tytul, $opis, $zdjecie, $cena, $data_wystawienia, $data_zakonczenia, $kategoria);
+            $add_bid->bind_param("isssissi",$sprzedajacy_id, $tytul, $opis, $unique_imgname, $cena, $data_wystawienia, $data_zakonczenia, $kategoria);
             $add_bid->execute();
             header('Location:http://localhost/aledrogo/main/auctions.php');
         }
