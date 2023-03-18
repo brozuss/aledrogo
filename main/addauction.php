@@ -9,7 +9,7 @@ include('static/navbar.php');
     <div><h1><span>Dodaj</span> ogłoszenie</h1></div>
 </nav>
 <div class="container"> 
-    <form action="addauction.php" method="post">
+    <form action="addauction.php" method="post" enctype="multipart/form-data">
         <div class="form_addauction">
             
             <!-- Tytuł ogłoszenia -->
@@ -40,7 +40,7 @@ include('static/navbar.php');
             </div>
             <!-- dodawanie zdjjecia -->
             <div class="inputarea">    
-                    <input type="file" name="file" id="file">  
+                    <input type="file" name="zdjecie" id="zdjecie">  
             </div>
             <input type="submit" class="additem" value="DODAJ">
             <!-- PHP CONFIG -->
