@@ -67,7 +67,7 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['haslo'])){
         }else{
             // haslo niepoprawne
             echo "<div style='color: red;' >
-            Coś poszło nie tak. Spróbuj wpisać swoje dane ponownie.
+            <br>Coś poszło nie tak. Spróbuj wpisać swoje dane ponownie.
             </div>";   
         }
     }

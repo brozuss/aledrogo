@@ -31,13 +31,13 @@
     
 .container .h h1 {
     font-weight: bold;
-    font-size: 1em; 
+    font-size: 2em; 
     text-align: left;
     padding-bottom: 30px;
 }
     
 .container .h p {
-    font-size: 0.5em;
+    font-size: 1em;
     font-weight: 400;
     text-align: left;
 }

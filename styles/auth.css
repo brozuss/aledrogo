@@ -9,10 +9,10 @@
 }
 
 .logreg label{
-    border: 1px solid black;
+    border: 0px black;
     padding: 4px 8px;
     width: 30%;
-    font-size: 0.7em;
+    font-size: 1em;
     font-weight: 400;    
     width: fit-content;
     border-radius: 5px;
