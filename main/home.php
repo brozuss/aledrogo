@@ -4,22 +4,21 @@ include('static/head.php');
 include('static/navbar.php');
 ?>
 <!-- filter nav -->
-<h2>Filtry</h2>
-
 <form action="home.php" method="post">
   <nav class="filternav">
     <div class="filter-item">  
       <label for="kategoria">Kategoria</label>
-          <select name="kategoria" id="kategoria">
+          <select name="kategoria" id="kategoria" onchange="this.form.submit()">
+            <option value="">Wybierz kategorię</option>
             <option value="0">Wszystkie kategorie</option>
             <option value="1">Komputery</option>
             <option value="2">Elektronika</option>
             <option value="3">Motoryzacja</option>
           </select>
     </div>
-    <div class="filter-item">
+    <!-- <div class="filter-item">
       <input type="submit" class="btnfilter" value="FILTRUJ" name="filtersubmit">
-    </div>
+    </div> -->
   </nav>
 </form>
 
@@ -28,55 +27,35 @@ include('static/navbar.php');
 <section class="container-all-products">
       <?php
         include('../phpconfig/connect.php');
-        if(isset($_REQUEST['kategoria'])){
-        
-          $filtr_kategoria=$_REQUEST['kategoria'];
-          if($_REQUEST['kategoria']==0){
-            $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id order by rand()");
-          
-            while($row = mysqli_fetch_array($sel)){
-              $nazwa=$row['nazwa'];
-              $opis=$row['opis'];
-              $img_name=$row['img_name'];
-              $cena_wywolawcza=$row['cena_wywolawcza'];
-              $cena_podbicie=$row['cena_podbicie'];
-              ?>
-              <a href='' class='link'><div class='container-product'>
-                <img src="<?php echo'zdjecia/'.$img_name?>">
-                <div class='title_description'>
-                  <div class='title'> <h3><?php echo $nazwa?></h3> </div>
-                  <div class='description'> <p><?php echo $opis?></p> </div>
-                </div>
-                <div class='price'>
-                    <p><?php echo $cena_podbicie .'zł'?></p>
-                </div>
-              </div></a>
-              <?php
-            }
-          }else{
-            $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE przedmioty.kategoria_id=$filtr_kategoria ORDER BY rand()");
-          
-            while($row = mysqli_fetch_array($sel)){
-              $nazwa=$row['nazwa'];
-              $opis=$row['opis'];
-              $img_name=$row['img_name'];
-              $cena_wywolawcza=$row['cena_wywolawcza'];
-              $cena_podbicie=$row['cena_podbicie'];
-              ?>
-              <a href='' class='link'><div class='container-product'>
-                <img src="<?php echo'zdjecia/'.$img_name?>">
-                <div class='title_description'>
-                  <div class='title'> <h3><?php echo $nazwa?></h3> </div>
-                  <div class='description'> <p><?php echo $opis?></p> </div>
-                </div>
-                <div class='price'>
-                    <p><?php echo $cena_podbicie .'zł'?></p>
-                </div>
-              </div></a>
-              <?php
-            }
-          }
+        if(empty($_REQUEST['kategoria'])){
+              $category_cond=1;
+              
+        }else{
+            $filtr_kategoria=$_REQUEST['kategoria'];
+            $category_cond='przedmioty.kategoria_id='.$filtr_kategoria;
         }
+        $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond ORDER BY rand()");
+          
+        while($row = mysqli_fetch_array($sel)){
+          $nazwa=$row['nazwa'];
+          $opis=$row['opis'];
+          $img_name=$row['img_name'];
+          $cena_wywolawcza=$row['cena_wywolawcza'];
+          $cena_podbicie=$row['cena_podbicie'];
+          echo"
+            <a href='' class='link'><div class='container-product'>
+              <img src='zdjecia/$img_name'>
+              <div class='title_description'>
+                <div class='title'> <h3>$nazwa</h3> </div>
+                <div class='description'> <p>$opis</p> </div>
+              </div>
+              <div class='price'>
+                <p>$cena_podbicie zł</p>
+              </div>
+            </div></a>
+          ";
+        }
+        
       ?>
 </section>
 
