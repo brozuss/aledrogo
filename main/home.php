@@ -11,9 +11,19 @@ include('static/navbar.php');
           <select name="kategoria" id="kategoria" onchange="this.form.submit()">
             <option value="">Wybierz kategorię</option>
             <option value="0">Wszystkie kategorie</option>
-            <option value="1">Komputery</option>
-            <option value="2">Elektronika</option>
-            <option value="3">Motoryzacja</option>
+            <?php
+              include("../phpconfig/connect.php");
+              $categories=mysqli_query($connect, "SELECT * from kategorie ORDER BY nazwa ASC");
+              while($row=mysqli_fetch_array($categories)){
+                $id_categories=$row['id'];
+                $name_categories=$row['nazwa'];
+                echo"
+                <option value='$id_categories'>$name_categories</option>
+                ";
+            
+              }
+            ?>
+
           </select>
     </div>
     <!-- <div class="filter-item">
@@ -34,28 +44,44 @@ include('static/navbar.php');
             $filtr_kategoria=$_REQUEST['kategoria'];
             $category_cond='przedmioty.kategoria_id='.$filtr_kategoria;
         }
-        $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond ORDER BY rand()");
-          
-        while($row = mysqli_fetch_array($sel)){
-          $nazwa=$row['nazwa'];
-          $opis=$row['opis'];
-          $img_name=$row['img_name'];
-          $cena_wywolawcza=$row['cena_wywolawcza'];
-          $cena_podbicie=$row['cena_podbicie'];
-          echo"
-            <a href='' class='link'><div class='container-product'>
-              <img src='zdjecia/$img_name'>
-              <div class='title_description'>
-                <div class='title'> <h3>$nazwa</h3> </div>
-                <div class='description'> <p>$opis</p> </div>
-              </div>
-              <div class='price'>
-                <p>$cena_podbicie zł</p>
-              </div>
-            </div></a>
-          ";
+        // sprawdzanie czy istnieją aukcje
+        $isexisauctions=$connect->prepare("SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond");
+        $isexisauctions->execute();
+        $res_isexisauctions = $isexisauctions->get_result();
+        if($res_isexisauctions->num_rows == 0)
+        {
+            echo"
+            <section class='container-all-products' id='defaultsection'>
+                <div id='noproducts'>
+                    <h1> Brak produktów do wyświetlenie o danych kryteriach </h1>
+                </div>    
+            </section>
+            ";
+        }else{
+
+          // wyświetlanie aukcji
+          $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond ORDER BY rand()");
+            
+          while($row = mysqli_fetch_array($sel)){
+            $nazwa=$row['nazwa'];
+            $opis=$row['opis'];
+            $img_name=$row['img_name'];
+            $cena_wywolawcza=$row['cena_wywolawcza'];
+            $cena_podbicie=$row['cena_podbicie'];
+            echo"
+              <a href='' class='link'><div class='container-product'>
+                <img src='zdjecia/$img_name'>
+                <div class='title_description'>
+                  <div class='title'> <h3>$nazwa</h3> </div>
+                  <div class='description'> <p>$opis</p> </div>
+                </div>
+                <div class='price'>
+                  <p>$cena_podbicie zł</p>
+                </div>
+              </div></a>
+            ";
+          }
         }
-        
       ?>
 </section>
 

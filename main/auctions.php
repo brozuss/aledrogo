@@ -10,13 +10,10 @@ include('static/navbar.php');
     <a class="dodajogloszenie" href="../main/addauction.php"><h1> Dodaj ogłoszenie</h1></a>
 </nav>
 <div class="container">
-    <main class="container-all-auctions">
-        <section class="container-auction">
-            <?php
-                include('../phpconfig/auctionsconfig.php');
-            ?> 
-        </section>
-    </main>
+    <?php
+        include('../phpconfig/auctionsconfig.php');
+    ?> 
+        
 </div>
 <section></section>
 <!-- footer -->

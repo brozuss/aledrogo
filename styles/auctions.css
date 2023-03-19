@@ -41,3 +41,19 @@
     height: 200px;
     background-color: white;
 }
+
+#noproducts{
+    background-color: white;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#noproducts span{
+    color: rgba(249, 92, 8, 1);
+    font-weight: bold;
+}
