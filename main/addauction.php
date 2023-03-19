@@ -23,9 +23,9 @@ include('static/navbar.php');
                     <select name="kategoria" id="category">
                         <!-- insert options from db  -->
                         <option value=0>---</option>
-                        <option value=1>Komputery</option>
-                        <option value=2>Elektronika</option>
-                        <option value=3>Motoryzacja</option>
+                        <?php
+                            include("../phpconfig/categories_list.php");
+                        ?>
                     </select>
             </div>
             <!-- Cena -->
