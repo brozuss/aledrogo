@@ -18,11 +18,6 @@ include('static/navbar.php');
           </select>
     </div>
     <div class="filter-item">
-      <label for="cena">Cena</label>
-        <div><input type="number" placeholder="Od" name="cena_od">
-        <input type="number" placeholder="Do" name="cena_do"></div>
-    </div>
-    <div class="filter-item">
       <input type="submit" class="btnfilter" value="FILTRUJ" name="filtersubmit">
     </div>
   </nav>
@@ -33,14 +28,11 @@ include('static/navbar.php');
 <section class="container-all-products">
       <?php
         include('../phpconfig/connect.php');
-        // if(isset($_REQUEST['kategoria']) && isset($_REQUEST['cena_od']) && isset($_REQUEST['cena_do'])){
-        if(isset($_REQUEST['filtersubmit'])){
-          
+        if(isset($_REQUEST['kategoria'])){
+        
           $filtr_kategoria=$_REQUEST['kategoria'];
-          $filtr_cena_od=$_REQUEST['cena_od'];
-          $filtr_cena_do=$_REQUEST['cena_do'];
           if($_REQUEST['kategoria']==0){
-            $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id");
+            $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id order by rand()");
           
             while($row = mysqli_fetch_array($sel)){
               $nazwa=$row['nazwa'];
@@ -48,62 +40,41 @@ include('static/navbar.php');
               $img_name=$row['img_name'];
               $cena_wywolawcza=$row['cena_wywolawcza'];
               $cena_podbicie=$row['cena_podbicie'];
-              echo("
+              ?>
               <a href='' class='link'><div class='container-product'>
-                <img src='zdjecia/$img_name'>
+                <img src="<?php echo'zdjecia/'.$img_name?>">
                 <div class='title_description'>
-                  <div class='title'> <h3>$nazwa</h3> </div>
-                  <div class='description'> <p>$opis</p> </div>
+                  <div class='title'> <h3><?php echo $nazwa?></h3> </div>
+                  <div class='description'> <p><?php echo $opis?></p> </div>
                 </div>
                 <div class='price'>
-                    <p>$cena_podbicie zł</p>
+                    <p><?php echo $cena_podbicie .'zł'?></p>
                 </div>
               </div></a>
-              ");
+              <?php
             }
           }else{
-            $sel=mysqli_query($connect, "SELECT przedmioty.nazwa, przedmioty.opis, przedmioty.img_name, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE przedmioty.kategoria_id=$filtr_kategoria AND licytacje.cena_podbicie BETWEEN $filtr_cena_od AND $filtr_cena_do");
-            
+            $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE przedmioty.kategoria_id=$filtr_kategoria ORDER BY rand()");
+          
             while($row = mysqli_fetch_array($sel)){
               $nazwa=$row['nazwa'];
               $opis=$row['opis'];
               $img_name=$row['img_name'];
+              $cena_wywolawcza=$row['cena_wywolawcza'];
               $cena_podbicie=$row['cena_podbicie'];
-              echo("
+              ?>
               <a href='' class='link'><div class='container-product'>
-                <img src='zdjecia/$img_name'>
+                <img src="<?php echo'zdjecia/'.$img_name?>">
                 <div class='title_description'>
-                  <div class='title'> <h3>$nazwa</h3> </div>
-                  <div class='description'> <p>$opis</p> </div>
+                  <div class='title'> <h3><?php echo $nazwa?></h3> </div>
+                  <div class='description'> <p><?php echo $opis?></p> </div>
                 </div>
                 <div class='price'>
-                    <p>$cena_podbicie zł</p>
+                    <p><?php echo $cena_podbicie .'zł'?></p>
                 </div>
               </div></a>
-              ");
+              <?php
             }
-          }
-        }else{
-          $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id");
-          
-          while($row = mysqli_fetch_array($sel)){
-            $nazwa=$row['nazwa'];
-            $opis=$row['opis'];
-            $img_name=$row['img_name'];
-            $cena_wywolawcza=$row['cena_wywolawcza'];
-            $cena_podbicie=$row['cena_podbicie'];
-            echo("
-            <a href='' class='link'><div class='container-product'>
-              <img src='zdjecia/$img_name'>
-              <div class='title_description'>
-                <div class='title'> <h3>$nazwa</h3> </div>
-                <div class='description'> <p>$opis</p> </div>
-              </div>
-              <div class='price'>
-                  <p>$cena_podbicie zł</p>
-              </div>
-            </div></a>
-            ");
           }
         }
       ?>
@@ -142,4 +113,3 @@ include('static/navbar.php');
 <?php
 include('static/footer.php');
 ?>
-
