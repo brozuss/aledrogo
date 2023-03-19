@@ -28,9 +28,60 @@
 }
 
 /* FILTERS */
+h2{
+    margin: 20px 0 10px 10%;
+}
 
 .filternav{
     width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+
+}
+
+.filter-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.filternav label{
+    border: 0px black;
+    padding: 4px 8px;
+    width: 30%;
+    font-size: 1em;
+    font-weight: 400;    
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.filternav select, .filternav input{
+    font-family: inherit;
+    border: 1px black solid;
+    width: 200px;
+    height: 40px;
+    padding: 0px 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.filternav input{
+    width: 100px;
+}
+
+.btnfilter{
+    width: 340px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+
+.btnfilter:hover{
+    background-color: rgba(249, 92, 8, 1);
+    color: white;
+    border: 1px white solid;
 }
 
 /* PRODUCTS */
