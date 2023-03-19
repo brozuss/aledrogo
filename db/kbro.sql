@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Mar 2023, 21:51
+-- Czas generowania: 19 Mar 2023, 20:14
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -32,15 +32,6 @@ CREATE TABLE `kategorie` (
   `nazwa` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Zrzut danych tabeli `kategorie`
---
-
-INSERT INTO `kategorie` (`id`, `nazwa`) VALUES
-(1, 'Komputery'),
-(2, 'Elektronika'),
-(3, 'Motoryzacja');
-
 -- --------------------------------------------------------
 
 --
@@ -50,7 +41,7 @@ INSERT INTO `kategorie` (`id`, `nazwa`) VALUES
 CREATE TABLE `licytacje` (
   `id` int(11) NOT NULL,
   `przedmiot_id` int(11) NOT NULL,
-  `uzytkownik_id` int(11) NOT NULL,
+  `uzytkownik_id` int(11) DEFAULT NULL,
   `cena_podbicie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -65,20 +56,12 @@ CREATE TABLE `przedmioty` (
   `sprzedajacy_id` int(11) NOT NULL,
   `nazwa` text NOT NULL,
   `opis` text NOT NULL,
-  `zdjecie_id` text NOT NULL,
+  `img_name` text NOT NULL,
   `cena_wywolawcza` int(11) NOT NULL,
   `data_wystawienia` datetime NOT NULL,
   `data_zakonczenia` datetime NOT NULL,
   `kategoria_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Zrzut danych tabeli `przedmioty`
---
-
-INSERT INTO `przedmioty` (`id`, `sprzedajacy_id`, `nazwa`, `opis`, `zdjecie_id`, `cena_wywolawcza`, `data_wystawienia`, `data_zakonczenia`, `kategoria_id`) VALUES
-(17, 1, 'dsadas', 'test user', 'dsa', 32132, '2023-03-17 20:34:32', '2023-04-17 20:34:32', 1),
-(18, 2, 'cufdsfs', 'dsadasda', 'dsa', 321312, '2023-03-17 20:44:45', '2023-04-17 20:44:45', 2);
 
 -- --------------------------------------------------------
 
@@ -93,14 +76,6 @@ CREATE TABLE `uzytkownicy` (
   `email` text NOT NULL,
   `haslo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Zrzut danych tabeli `uzytkownicy`
---
-
-INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `email`, `haslo`) VALUES
-(1, 'admin', 'admin', 'admin@alledrogo.pl', '$argon2i$v=19$m=65536,t=4,p=1$RWUwckxROVdhelFGY1RDbQ$CyNfZqIUOJ+xxA0cvO0yy8DARwXHaqTT49+7ZSpMNPM'),
-(2, 'Marek', 'Bad', 'marbad@speed.pl', '$argon2i$v=19$m=65536,t=4,p=1$OW5ueTZ1WEM5M1N1MXdodA$G7Tns9/elsKNhkXW8BqT/A0oJCOqGp5YsvS1aEyMNeY');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -143,19 +118,19 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT dla tabeli `kategorie`
 --
 ALTER TABLE `kategorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `licytacje`
 --
 ALTER TABLE `licytacje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmioty`
 --
 ALTER TABLE `przedmioty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
