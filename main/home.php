@@ -54,6 +54,7 @@ include('static/navbar.php');
           $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond ORDER BY rand()");
             
           while($row = mysqli_fetch_array($sel)){
+            $produkt_id=$row['id'];
             $nazwa=$row['nazwa'];
             $opis=$row['opis'];
             $img_name=$row['img_name'];
@@ -62,26 +63,26 @@ include('static/navbar.php');
             $data_wystawienia=strtotime($row['data_wystawienia']);
             $data_zakonczenia=strtotime($row['data_zakonczenia']);
             $czaszakoncz=round(($data_zakonczenia-$data_wystawienia)/86400);
-            echo"
-              <a href='product.php' class='link'><div class='container-product'>
+            ?>
+            <a href='product.php?product=<?php echo $row['id']?>' class='link'><div class='container-product'>
               <div class='grid_img'>
-                  <img src='zdjecia/$img_name'>
+                  <img src='zdjecia/<?php echo $img_name?>'>
               </div>
               <div class='grid_tytul'>
-                  $nazwa
+                  <?php echo $nazwa?>
               </div>
               <div class='grid_opis'>
-                  $opis
+                  <?php echo $opis?>
               </div>
               <div class='grid_cena'>
-                  $cena_podbicie zł
+                  <?php echo $cena_podbicie?> zł
               </div>
               <div class='grid_czas'>
-                  <p>Koniec aukcji za:</p
-                  <p>$czaszakoncz dni</p>
+                  <p>Koniec aukcji za:</p>
+                  <p><?php echo $czaszakoncz?> dni</p>
               </div>
-          </div></a>    
-              ";
+            </div></a>    
+            <?php
           }
         }
       ?>
