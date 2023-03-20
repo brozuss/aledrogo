@@ -8,7 +8,7 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
     $opis=$_REQUEST['opis'];
     $zdjecie=$_FILES['zdjecie']['name'];   
     $data_wystawienia=date('Y-m-d H:i:s');
-    $data_zakonczenia=date("Y-m-d H:i:s", strtotime('+1 month'));
+    $data_zakonczenia=date("Y-m-d H:i:s", strtotime('+2 weeek'));
     $cena=$_REQUEST['cena'];
     $kategoria=$_REQUEST['kategoria'];
     

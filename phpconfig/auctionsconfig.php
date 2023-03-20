@@ -33,18 +33,31 @@ if($res_ogloszenie->num_rows == 0){
           $img_name=$row['img_name'];
           $cena_wywolawcza=$row['cena_wywolawcza'];
           $cena_podbicie=$row['cena_podbicie'];
+          $data_wystawienia=strtotime($row['data_wystawienia']);
+          $data_zakonczenia=strtotime($row['data_zakonczenia']);
+          $czaszakoncz=round(($data_zakonczenia-$data_wystawienia)/86400);
           echo"
-            <a href='/main/product.php' class='link'><div class='container-product'>
-              <img src='zdjecia/$img_name'>
-              <div class='title_description'>
-                <div class='title'> <h3>$nazwa</h3> </div>
-                <div class='description'> <p>$opis</p> </div>
-              </div>
-              <div class='price'>
-                <p>$cena_podbicie zł</p>
-              </div>
-            </div></a>
-          ";
+            <section class='container-all-products' id='defaultsection'>
+            <a href='product.php' class='link'><div class='container-product'>
+            <div class='grid_img'>
+                <img src='zdjecia/$img_name'>
+            </div>
+            <div class='grid_tytul'>
+                $nazwa
+            </div>
+            <div class='grid_opis'>
+                $opis
+            </div>
+            <div class='grid_cena'>
+                $cena_podbicie zł
+            </div>
+            <div class='grid_czas'>
+                Koniec aukcji za:
+                $czaszakoncz dni
+            </div>
+        </div></a>    
+            </section>
+            ";
         }
 }    
       ?>

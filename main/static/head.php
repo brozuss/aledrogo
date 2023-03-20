@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../styles/auth.css"/>
     <link rel="stylesheet" href="../styles/auctions.css"/>
     <link rel="stylesheet" href="../styles/addauction.css"/>
+    <link rel="stylesheet" href="../styles/product.css"/>
     
     <script>
         if ( window.history.replaceState ) {
