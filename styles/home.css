@@ -120,6 +120,7 @@ h2{
     height: 184px;
     display: flex;
     flex-direction: row;
+    object-fit: cover;
 }
 
 .title_description{
