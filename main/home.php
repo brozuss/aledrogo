@@ -62,7 +62,7 @@ include('static/navbar.php');
             $cena_podbicie=$row['cena_podbicie'];
             $data_wystawienia=strtotime($row['data_wystawienia']);
             $data_zakonczenia=strtotime($row['data_zakonczenia']);
-            $czaszakoncz=round(($data_zakonczenia-$data_wystawienia)/86400);
+            $czaszakoncz=round(($data_zakonczenia-strtotime("now"))/86400);
             ?>
             <a href='product.php?product=<?php echo $row['id']?>' class='link'><div class='container-product'>
               <div class='grid_img'>

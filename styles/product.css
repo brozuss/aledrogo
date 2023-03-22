@@ -1,0 +1,289 @@
+.container_product_details{
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid; 
+
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 2fr 1fr;
+
+    gap: 20px;
+    row-gap: 20px;
+    height: 100%;
+
+}
+
+/* main grid layout */
+.product_title{
+    background-color: white; 
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product_img{
+    background-color: white; 
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+    grid-row-end: 3;
+    grid-column-end: 2;
+    padding: 20px;   
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.product_img .img img{
+    max-width: 756px;
+    max-height: 425px;
+}
+
+.product_description{
+    background-color: white; 
+    grid-row-start: 3;
+    grid-column-start: 1;
+
+    grid-row-end: 4;
+    grid-column-end: 2;
+    padding: 20px 20px 60px 20px;   
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products_proposed{
+    grid-row-start: 3;
+    grid-column-start: 2;
+
+    grid-row-end: 5;
+    grid-column-end: 3;
+}
+
+.product_bid{
+    grid-row-start: 1;
+    grid-column-start: 2;
+
+    grid-row-end: 3;
+    grid-column-end: 3;
+    height: 100%;
+    width: 100%;
+    display: grid; 
+    grid-template-rows: auto auto ;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+
+/* product bid grid layout */
+
+    /* seller layout */
+    .product_bid .seller_contact{
+        background-color: white; 
+        padding: 20px;
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 2;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .seller_contact h2{
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+        font-weight: 700;
+    }
+    
+    .seller_contact p{
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 700;
+        font-weight: 400;
+        margin: 10px 0 0 0;
+        text-transform: uppercase;
+    }
+    .seller_contact p span{
+        color: rgba(249, 92, 8, 1);
+    
+    }
+    .seller_contact button{
+        width: 170px;
+        height: 50px;
+        margin: 20px auto 0 auto;
+        font-size: 0.7em;
+        font-weight: bold;
+        color: white;
+        background-color: rgba(249, 92, 8, 1);
+        border: 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .seller_contact button:hover{
+        background-color: white;
+        border: 1px solid #ccc;
+        color: rgba(249, 92, 8, 1);
+    }
+
+    /* bid & price layout */
+    .product_bid .product_bidprice{
+        background-color: white; 
+        padding: 20px;
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+        display: grid;
+        grid-template-rows: 25% 50% 25%;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        /* row-gap: 20px; */
+    }
+
+    .product_bid .product_bidprice .bidprice_price{
+        
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 2;
+    }
+    .product_bid .product_bidprice .bidprice_bid{
+        
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+    }
+    .bidrow{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .bidprice_bid .inputarea input[type=number]{
+        font-family: inherit;
+        border: 1px black solid;
+        width: 170px;
+        height: 50px;
+        font-size: 0.7em;
+        padding: 0px 12px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    .btnlicytuj{
+        width: 170px;
+        height: 50px;
+        font-size: 0.7em;
+        font-weight: bold;
+        background-color: whitesmoke;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .bidprice_bid .inputarea input[type=number]:focus{
+        outline-style: 2px solid;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btnlicytuj:hover{
+        background-color: rgba(249, 92, 8, 1);
+        color: white;
+        border: 1px white solid;
+    }
+
+    .product_bid .product_bidprice .bidprice_existtime{
+        
+        grid-row-start: 3;
+        grid-column-start: 1;
+
+        grid-row-end: 4;
+        grid-column-end: 2;
+    }
+    
+/* proposed grid layout */
+.products_proposed .product{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 3fr 1fr;
+    row-gap: 10px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    min-width: 400px;
+}
+.products_proposed .product:hover{
+    box-shadow: 0 5px 10px rgba(249, 92, 8, 0.7);
+}
+.products_proposed h3{
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+    text-align: center;
+}
+
+    /* proposed product layout */
+    .products_proposed .product .img{
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 3;
+        max-height: 225px;
+        display: flex;
+        justify-content: center;
+    }.products_proposed .product .img img{
+        max-width: 100%;
+        min-width: 70%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+    .products_proposed .product .title{
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+        padding: 0 0 5px 10px;
+        max-height: 2em;
+        line-height: 1em;    
+        overflow: hidden;
+    }
+    .products_proposed .product .title h4{
+        font-weight: 400;
+    }
+    .products_proposed .product .price{
+        grid-row-start: 2;
+        grid-column-start: 2;
+
+        grid-row-end: 3;
+        grid-column-end: 3;
+        padding: 0 10px 5px 0;
+        
+        font-size: 18px;
+        line-height: 18px;
+        margin: 0;
+        font-weight: 700;
+        text-align: right;
+    }
+
+/* description layout */
+.product_description h3{
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+}
