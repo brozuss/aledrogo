@@ -56,7 +56,7 @@ include('static/navbar.php');
                             echo '<h2>Zarządzanie aukcją</h2>';
                         }else{?>
                         <div class="bidprice_bid">
-                            <form action="../phpconfig/bids.php" method="post">
+                            <form action="product.php?product=<?php echo$_GET['product']?>" method="post">
                                 <div class="bidrow">
                                     <div class="inputarea">
                                         <input type="number" placeholder="<?php echo $cena_podbicie+10?> zł lub więcej" name="bidprice">
@@ -66,6 +66,10 @@ include('static/navbar.php');
                                     </div>
                                 </div>                   
                             </form>
+                            <!-- bid auction scripy -->
+                            <?php
+                            include('../phpconfig/bids.php');
+                            ?>
                         </div>
                         <?php } ?>
                         <div class="bidprice_existtime">

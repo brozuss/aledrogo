@@ -36,28 +36,29 @@ if($res_ogloszenie->num_rows == 0){
           $data_wystawienia=strtotime($row['data_wystawienia']);
           $data_zakonczenia=strtotime($row['data_zakonczenia']);
           $czaszakoncz=round(($data_zakonczenia-$data_wystawienia)/86400);
-          echo"
+?>
             <section class='container-all-products' id='defaultsection'>
-            <a href='product.php' class='link'><div class='container-product'>
+            <a href='product.php?product=<?php echo $row['id']?>' class="link">
+            <div class='container-product'>
             <div class='grid_img'>
-                <img src='zdjecia/$img_name'>
+                <img src='zdjecia/<?php echo $img_name?>'>
             </div>
             <div class='grid_tytul'>
-                $nazwa
+                <?php echo $nazwa ?>
             </div>
             <div class='grid_opis'>
-                $opis
+                <?php echo $opis ?>
             </div>
             <div class='grid_cena'>
-                $cena_podbicie zł
+                <?php echo $cena_podbicie ?>zł
             </div>
             <div class='grid_czas'>
                 Koniec aukcji za:
-                $czaszakoncz dni
+                <?php echo $czaszakoncz ?>dni
             </div>
         </div></a>    
             </section>
-            ";
+<?php
         }
 }    
       ?>

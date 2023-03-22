@@ -36,7 +36,8 @@ include('static/navbar.php');
             <!-- Opis -->
             <div class="inputarea">    
                 <label for="description">Opis:</label>
-                    <input type="text" name="opis" id="description">  
+                    <textarea name="opis" id="description" cols="30" rows="10"></textarea>
+                    <!-- <input type="text" name="opis" id="description">   -->
             </div>
             <!-- dodawanie zdjjecia -->
             <div class="inputarea">    

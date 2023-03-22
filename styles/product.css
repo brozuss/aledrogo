@@ -120,8 +120,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+
     }
-    
+    .seller_contact a{
+        width: 170px;
+        height: 50px;
+        margin: 20px auto 0 auto;
+
+    }
     .seller_contact button:hover{
         background-color: white;
         border: 1px solid #ccc;
@@ -185,6 +192,7 @@
         background-color: whitesmoke;
         border: 1px solid #ccc;
         border-radius: 5px;
+        cursor: pointer;
     }
     
     .bidprice_bid .inputarea input[type=number]:focus{

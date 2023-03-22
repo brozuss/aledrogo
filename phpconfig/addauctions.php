@@ -6,9 +6,10 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
     $sprzedajacy_id=$_SESSION['user'];
     $tytul=$_REQUEST['tytul'];
     $opis=$_REQUEST['opis'];
+    $opis = nl2br($opis);
     $zdjecie=$_FILES['zdjecie']['name'];   
     $data_wystawienia=date('Y-m-d H:i:s');
-    $data_zakonczenia=date("Y-m-d H:i:s", strtotime('+2 weeek'));
+    $data_zakonczenia=date("Y-m-d H:i:s", strtotime('+2 week'));
     $cena=$_REQUEST['cena'];
     $kategoria=$_REQUEST['kategoria'];
     

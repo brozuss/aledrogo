@@ -46,6 +46,8 @@
     font-size: 1em;
     font-weight: bold;
     background-color: whitesmoke;
+    cursor: pointer;
+
 }
 
 .inputarea input:focus{
