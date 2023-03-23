@@ -34,8 +34,8 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
                 $bid_item_id=$row['id'];
                 $bid_auctioner_id=null;
                 $bid_item_price=$row['cena_wywolawcza'];
-                $add_bid=$connect->prepare("INSERT INTO `licytacje` VALUES (null, ?, ?, ?);");
-                $add_bid->bind_param("ibi",$bid_item_id, $licytujacy_id, $bid_item_price);
+                $add_bid=$connect->prepare("INSERT INTO `licytacje` VALUES (null, ?, ?, ?, ?);");
+                $add_bid->bind_param("ibib",$bid_item_id, $licytujacy_id, $bid_item_price, NULL);
                 $add_bid->execute();
             }
             

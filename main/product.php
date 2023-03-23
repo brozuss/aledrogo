@@ -66,7 +66,7 @@ include('static/navbar.php');
                                     </div>
                                 </div>                   
                             </form>
-                            <!-- bid auction scripy -->
+                            <!-- bid auction script -->
                             <?php
                             include('../phpconfig/bids.php');
                             ?>

@@ -2,6 +2,7 @@
 <?php
 include('static/head.php');
 include('static/navbar.php');
+include('../phpconfig/update_bid_status.php');
 ?>
 <!-- filter nav -->
 <form action="home.php" method="post">
@@ -51,8 +52,8 @@ include('static/navbar.php');
         }else{
 
           // wyświetlanie aukcji
-          $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond ORDER BY rand()");
-            
+          $sel=mysqli_query($connect, "SELECT *, licytacje.cena_podbicie FROM `przedmioty` JOIN licytacje ON licytacje.przedmiot_id=przedmioty.id WHERE $category_cond AND przedmioty.data_zakonczenia>CURRENT_DATE ORDER BY rand()");
+          
           while($row = mysqli_fetch_array($sel)){
             $produkt_id=$row['id'];
             $nazwa=$row['nazwa'];
