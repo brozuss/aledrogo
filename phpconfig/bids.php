@@ -14,6 +14,7 @@ include('../phpconfig/connect.php');
             $set_new_price=$connect->prepare("UPDATE `licytacje` SET `uzytkownik_id` = '".$_SESSION['user']."', `cena_podbicie` = '".$proposed_price."' WHERE `licytacje`.`id` = '".$bid_id."';
             ");
             $set_new_price->execute();
+            header("refresh: 0.01 ");
         }
         
     }

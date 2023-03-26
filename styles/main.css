@@ -30,6 +30,7 @@ img {
 }
 
 .container{
+    min-height: 56.6vh;
     display: flex;
     flex-direction: row;
 }
@@ -78,7 +79,7 @@ footer {
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     position: relative;
-    min-height: 50vh;
+    min-height: 30vh;
     padding: 50px 100px;
     background-color: black;
     justify-content: center;

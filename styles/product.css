@@ -214,6 +214,9 @@
         grid-row-end: 4;
         grid-column-end: 2;
     }
+    .product_bidprice button{
+        transform: translate(175px, -245px);
+    }
     
 /* proposed grid layout */
 .products_proposed .product{
@@ -223,8 +226,9 @@
     row-gap: 10px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    max-width: 280px;
+    min-width: 280px;
     min-width: 400px;
+    margin: 10px 0 0 0;
 }
 .products_proposed .product:hover{
     box-shadow: 0 5px 10px rgba(249, 92, 8, 0.7);
@@ -252,7 +256,7 @@
         justify-content: center;
     }.products_proposed .product .img img{
         max-width: 100%;
-        min-width: 70%;
+        /* min-width: 70%; */
         max-height: 100%;
         object-fit: cover;
     }
