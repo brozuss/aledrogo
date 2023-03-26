@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Mar 2023, 16:17
+-- Czas generowania: 26 Mar 2023, 22:16
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -64,9 +64,9 @@ CREATE TABLE `licytacje` (
 INSERT INTO `licytacje` (`id`, `przedmiot_id`, `uzytkownik_id`, `cena_podbicie`, `zakonczona`) VALUES
 (1, 1, NULL, 35000, 0),
 (2, 2, NULL, 142000, 0),
-(3, 3, 1, 111, 0),
+(3, 3, 3, 300, 0),
 (4, 4, NULL, 200, 0),
-(5, 5, NULL, 3000, 1),
+(5, 5, 1, 3000, 1),
 (6, 6, NULL, 2137, 0);
 
 -- --------------------------------------------------------
