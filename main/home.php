@@ -71,15 +71,22 @@ include('../phpconfig/update_bid_status.php');
           <div class='grid_tytul'>
             <?php echo $nazwa ?>
           </div>
-          <div class='grid_opis'>
-            <?php echo $opis ?>
+          <div class='grid_opis_data'>
+            <div class="opis">
+              <?php echo $opis ?>
+            </div>
+            <div class="data">
+              Koniec aukcji za:
+              <?php echo $czaszakoncz ?> dni
+            </div>
           </div>
           <div class='grid_cena'>
             <?php echo $cena_podbicie ?> zł
           </div>
-          <div class='grid_czas'>
-            <p>Koniec aukcji za:</p>
-            <p><?php echo $czaszakoncz ?> dni</p>
+          <div class='grid_ulub'>
+              <span class="material-symbols-outlined">
+                favorite
+              </span>
           </div>
         </div>
       </a>

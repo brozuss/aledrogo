@@ -15,18 +15,6 @@
                   </div>
               </div>
           </i></li>
-  
-          <!-- CART -->
-          <li><i>
-              <div class="dropdown">
-                  <button class="dropbtn">KOSZYK</button>
-                  <div class="dropdown-content">
-                    <!-- lista rozwijana produktów dodanych do koszyka -->
-                      
-                  </div>
-              </div>
-          </i></li>
-  
           <!-- ACCOUNT -->
           <li><i>
               <div class="dropdown">

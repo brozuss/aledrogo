@@ -176,3 +176,13 @@ footer ul li a{
 .dropdown:hover .dropbtn:hover {
     background-color: rgba(32, 32, 31, 0);
 }
+
+/* ikony */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 24
+}
