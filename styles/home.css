@@ -176,6 +176,21 @@ h2{
     margin:  0 0 auto auto;
 }
 
+.grid_cena_orders{
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-end: 3;
+    grid-column-end: 4;
+    font-weight: bolder;
+    margin:  0 0 auto auto;
+    text-align: right;
+}
+.grid_cena_orders p{
+    color: #606163;
+    font-size: medium;
+    font-weight: normal;
+}
+
 .grid_ulub{
     grid-row-start: 2;
     grid-column-start: 3;

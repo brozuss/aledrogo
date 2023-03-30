@@ -12,7 +12,7 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
     $data_zakonczenia=date("Y-m-d H:i:s", strtotime('+2 week'));
     $cena=$_REQUEST['cena'];
     $kategoria=$_REQUEST['kategoria'];
-    
+    $null=0;
     // sprawdzanie czy pola uzupełnione
     if(!empty($tytul) && !empty($opis) && !empty($zdjecie) && !empty($cena) && !empty($kategoria)){
         // dodawanie zdjęć
@@ -35,7 +35,7 @@ if(isset($_REQUEST['tytul']) && isset($_REQUEST['kategoria']) && isset($_REQUEST
                 $bid_auctioner_id=null;
                 $bid_item_price=$row['cena_wywolawcza'];
                 $add_bid=$connect->prepare("INSERT INTO `licytacje` VALUES (null, ?, ?, ?, ?);");
-                $add_bid->bind_param("ibib",$bid_item_id, $licytujacy_id, $bid_item_price, NULL);
+                $add_bid->bind_param("ibii",$bid_item_id, $licytujacy_id, $bid_item_price, $null);
                 $add_bid->execute();
             }
             

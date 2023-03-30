@@ -2,7 +2,6 @@
 <?php
 include('static/head.php');
 include('static/navbar.php');
-include('../phpconfig/update_bid_status.php');
 ?>
 <!-- filter nav -->
 <form action="home.php" method="post">
@@ -76,17 +75,23 @@ include('../phpconfig/update_bid_status.php');
               <?php echo $opis ?>
             </div>
             <div class="data">
-              Koniec aukcji za:
-              <?php echo $czaszakoncz ?> dni
+              Aukcja zakończy się za:
+              <?php
+                if($czaszakoncz>1){ 
+                  echo $czaszakoncz.' dni';
+                }else{
+                  echo $czaszakoncz*24 .' godziny';
+                }
+              ?> 
             </div>
           </div>
           <div class='grid_cena'>
             <?php echo $cena_podbicie ?> zł
           </div>
           <div class='grid_ulub'>
-              <span class="material-symbols-outlined">
-                favorite
-              </span>
+            <span class="material-symbols-outlined">
+              favorite
+            </span>
           </div>
         </div>
       </a>

@@ -186,3 +186,15 @@ footer ul li a{
   'GRAD' 200,
   'opsz' 24
 }
+
+.ended{
+    position: absolute;
+    z-index: 3;
+}
+.imgimg{
+    position: absolute;
+    z-index: 1;
+}
+
+
+

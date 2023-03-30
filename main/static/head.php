@@ -1,7 +1,7 @@
 <?php
     session_start();
     ob_start();
-    
+    include('../phpconfig/update_bid_status.php');
     ?>
 
 <!DOCTYPE html>
