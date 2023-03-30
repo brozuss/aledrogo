@@ -1,11 +1,11 @@
 .container_product_details{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
     display: grid; 
 
     grid-template-rows: auto auto auto auto;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
 
     gap: 20px;
     row-gap: 20px;
@@ -193,6 +193,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         cursor: pointer;
+        justify-self: center;
     }
     
     .bidprice_bid .inputarea input[type=number]:focus{
@@ -214,9 +215,6 @@
         grid-row-end: 4;
         grid-column-end: 2;
     }
-    .product_bidprice button{
-        transform: translate(175px, -245px);
-    }
     
 /* proposed grid layout */
 .products_proposed .product{
@@ -226,7 +224,7 @@
     row-gap: 10px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    min-width: 280px;
+    min-height: 280px;
     min-width: 400px;
     margin: 10px 0 0 0;
 }
@@ -252,12 +250,12 @@
         grid-row-end: 2;
         grid-column-end: 3;
         max-height: 225px;
+        max-width: 400px;
         display: flex;
         justify-content: center;
     }.products_proposed .product .img img{
         max-width: 100%;
-        /* min-width: 70%; */
-        max-height: 100%;
+        min-width: 100%;
         object-fit: cover;
     }
     .products_proposed .product .title{
@@ -298,4 +296,10 @@
     line-height: 26px;
     margin-bottom: 16px;
     margin-top: 4px;
+}
+
+#product_login{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }

@@ -50,14 +50,15 @@ include('static/navbar.php');
                 <div class="bidprice_price">
                     <p>Aktualna oferta:</p>
                     <h2><?php echo $cena_podbicie ?> zł</h2>
-                </div>
+                </div>                    
+                <div class="bidprice_bid">
+
                 <?php
                 if(isset($_SESSION['user'])){
                 
                 if ($_SESSION['user'] == $sprzedajacy_id) {
                     echo '<h2>Zarządzanie aukcją</h2>';
                 } elseif ($_SESSION['user'] !== $sprzedajacy_id) { ?>
-                    <div class="bidprice_bid">
                         <form action="product.php?product=<?php echo $_GET['product'] ?>" method="post">
                             <div class="bidrow">
                                 <div class="inputarea">
@@ -72,12 +73,13 @@ include('static/navbar.php');
                         <?php
                         include('../phpconfig/bids.php');
                         ?>
-                    </div>
+                    
                 <?php }} else {
                     echo 'Aby licytować aukcję zaloguj się!';
-                    echo "<a href='auth.php' class='link'><button class='btnlicytuj'> ZALOGUJ SIĘ!</button></a>";
+                    echo "<a href='auth.php' class='link'><div id='product_login'><button class='btnlicytuj'> ZALOGUJ SIĘ!</button></div></a>";
                 }
                 mysqli_close($connect); ?>
+                </div>
                 <div class="bidprice_existtime">
                     Aukcja zakończy się za <?php echo $czaszakoncz ?>dni
                 </div>
